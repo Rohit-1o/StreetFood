@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%,  #FA922F 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .signup-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        .field-box {
+            margin-bottom: 15px;
+        }
+
+        .field-box label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .field-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #5a377d;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function processSignup() {
+            var fullName = document.getElementById("name").value;
+            var user = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("mobile").value;
+            var pass = document.getElementById("pass").value;
+            var confirmPass = document.getElementById("confirm").value;
+
+            if (fullName == "" || user == "" || email == "" || phone == "" || pass == "") {
+                alert("Please fill in all details.");
+                return false;
+            }
+
+            if (pass != confirmPass) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            // Simple verification display
+            document.write("<h1>Registration Successful</h1>");
+            document.write("<p>Welcome, " + fullName + "!</p>");
+            document.write("<p>Your username is: " + user + "</p>");
+            document.write("<p>A confirmation has been sent to: " + email + "</p>");
+        }
+    </script>
+</head>
+<body>
+
+    <div class="signup-card">
+        <h2>Sign Up</h2>
+        <form onsubmit="processSignup(); return false;" action="register.php">
+            <div class="field-box">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="John Wick">
+            </div>
+            <div class="field-box">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="johndoe123">
+            </div>
+            <div class="field-box">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="john@example.com">
+            </div>
+            <div class="field-box">
+                <label>Mobile No.</label>
+                <input type="text" id="mobile" placeholder="1234567890">
+            </div>
+            <div class="field-box">
+                <label>Password</label>
+                <input type="password" id="pass" placeholder="Create password">
+            </div>
+            <div class="field-box">
+                <label>Confirm Password</label>
+                <input type="password" id="confirm" placeholder="Repeat password">
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>

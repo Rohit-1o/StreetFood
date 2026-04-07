@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dinner | Desi Swad</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<style>
+a {
+    text-decoration: none;  /* removes underline */
+    color: white;           /* or any color you want */
+}
+</style>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar p-3">
+  <div class="container d-flex justify-content-between">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="./images/logo-removebg-preview (1).png" alt="Logo" width="40" height="40" class="me-2">
+        DESI SWAAD
+    </a>
+
+    <a href="home.html">
+      <button class="btn btn-outline-dark">Home</button>
+    </a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>🌙 Mumbai Dinner Specials</h1>
+  <p>Evening street vibes & local delights from Nariman Point</p>
+</div>
+
+<!-- FOOD LIST -->
+<div class="container pb-5">
+  <div class="row g-4">
+
+    <!-- 1 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/butterchicken.html">
+      <div class="food-card">
+        <img src="./images/dinner/Butter chicken.jpeg">
+        <div class="food-info">
+          <h5>Butter Chicken</h5>
+          <p>Creamy and rich North Indian curry</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 2 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/chickenbiriyani.html">
+      <div class="food-card">
+        <img src="./images/dinner/chicken Biryani.jpeg">
+        <div class="food-info">
+          <h5>Chicken Biryani</h5>
+          <p>Flavorful rice with spices & chicken</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 3 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/paneertikka.html">
+      <div class="food-card">
+        <img src="./images/dinner/paneer tikka.jpeg">
+        <div class="food-info">
+          <h5>Paneer Tikka</h5>
+          <p>Grilled paneer with smoky flavor</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 4 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/cholekulche.html">
+       <div class="food-card">
+        <img src="./images/dinner/chhole kulche.jpeg">
+        <div class="food-info">
+          <h5>Chole Kulche</h5>
+          <p>Spicy chickpeas with soft kulche</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 5 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/fishfry.html">
+      <div class="food-card">
+        <img src="./images/dinner/Fish Fry.jpeg">
+        <div class="food-info">
+          <h5>Fish Fry</h5>
+          <p>Coastal Mumbai crispy fish delight</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+    </a>
+    </div>
+
+    <!-- 6 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/vegthali.html">
+      <div class="food-card">
+        <img src="./images/dinner/Veg Thali.jpeg">
+        <div class="food-info">
+          <h5>Veg Thali</h5>
+          <p>Complete dinner plate with variety</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 7 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/eggbhurjipav.html">
+      <div class="food-card">
+        <img src="./images/dinner/egg bhurjipav.jpeg">
+        <div class="food-info">
+          <h5>Egg Bhurji Pav</h5>
+          <p>Street-style spicy scrambled eggs</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 8 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/dalfryjeerarice.html">
+      <div class="food-card">
+        <img src="./images/dinner/Daalfry and jeera rice.jpeg">
+        <div class="food-info">
+          <h5>Dal Fry & Jeera Rice</h5>
+          <p>Comforting Indian dinner combo</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 9 -->
+    <div class="col-md-4">
+      <a href = "/Categories/dinner/vegpulav.html">
+      <div class="food-card">
+        <img src="./images/dinner/vegpulao.jpeg">
+        <div class="food-info">
+          <h5>Veg Pulao</h5>
+          <p>Light and flavorful dinner option</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 10 -->
+    <div class="col-md-4">
+      <a href="/Categories/dinner/tandoorirotiandcurry.html">
+      <div class="food-card">
+        <img src="./images/dinner/tandoori roti and curry.jpeg">
+        <div class="food-info">
+          <h5>Tandoori Roti & Curry</h5>
+          <p>Classic Indian dinner combo</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 DesiSwad | Dinner Specials</p>
+</div>
+<script src="./javascript/js/script.js"></script>
+</body>
+</html>

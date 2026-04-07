@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snacks | DesiSwad</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+a {
+    text-decoration: none;  /* removes underline */
+    color: white;           /* or any color you want */
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar p-3">
+  <div class="container d-flex justify-content-between">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="./images/logo-removebg-preview (1).png" alt="Logo" width="40" height="40" class="me-2">
+        DESI SWAAD
+    </a>
+
+    <a href="home.html">
+      <button class="btn btn-outline-dark">Home</button>
+    </a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>🌆 Mumbai Street Snacks</h1>
+  <p>Famous bites from Nariman Point & local stalls</p>
+</div>
+
+<!-- FOOD LIST -->
+<div class="container pb-5">
+  <div class="row g-4">
+
+    <!-- 1 -->
+    <div class="col-md-4">
+      <a href="./Categories/snacks/bombaysandwich.html">
+      <div class="food-card">
+        <img src="./images/Snacks/sandwich.jpg">
+        <div class="food-info">
+          <h5>Bombay Sandwich</h5>
+          <p>Layered chutney sandwich</p>
+              <span class="cart-icon" onclick="addToCart()">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 2 -->
+    <div class="col-md-4">
+      <a href="/Categories/snacks/burger.html">
+      <div class="food-card">
+        <img src="./images/Snacks/burger.jpg">
+        <div class="food-info">
+          <h5>Burger</h5>
+          <p>The king of Mumbai street food</p>
+              <span class="cart-icon" onclick="addToCart()">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+
+    <!-- 3 -->
+    <div class="col-md-4">
+      <a href="/Categories/snacks/cheeseballs.html">
+      <div class="food-card">
+        <img src="./images/Snacks/cheese balls.jpg">
+        <div class="food-info">
+          <h5>Cheese Balls</h5>
+          <p>Crunchy, sweet & spicy cheese balls</p>
+              <span class="cart-icon" onclick="addToCart()">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 4 -->
+    <div class="col-md-4">
+      <a href="/Categories/snacks/chillipotato.html">
+      <div class="food-card">
+        <img src="/images/Snacks/chili patato.jpg">
+        <div class="food-info">
+          <h5>Chilli Patato</h5>
+          <p>Chilli potato is a crispy</p>
+              <span class="cart-icon" onclick="addToCart()">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 5 -->
+    <div class="col-md-4">
+      <a href="/Categories/snacks/chinesebhel.html">
+      <div class="food-card">
+        <img src="/images/Snacks/chinese bhel.jpg">
+        <div class="food-info">
+          <h5>Chinese Bhel</h5>
+          <p>Crunchy & Tasty</p>
+              <span class="cart-icon" onclick="addToCart()">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+
+
+    <!-- 6 -->
+    <div class="col-md-4">
+      <a href="/Categories/snacks/dahipuri.html">
+      <div class="food-card">
+        <img src="/images/Snacks/dhai puri.jpg">
+        <div class="food-info">
+          <h5>Dhai Puri</h5>
+          <p>Dahi puri is a crispy chaat filled with potatoes, chutneys, and yogurt.</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    
+    <!-- 7 -->
+    <div class="col-md-4">
+      <a href="/Categories/snacks/frenchfries.html">
+      <div class="food-card">
+        <img src="/images/Snacks/fries.jpg">
+        <div class="food-info">
+          <h5>French Fries</h5>
+          <p>French fries are crispy, deep-fried potato strips seasoned with salt.</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+
+    <!-- 8 -->
+    <div class="col-md-4">
+      <a href="./Categories/snacks/panipuri.html">
+      <div class="food-card">
+        <img src="./images/Snacks/pani puri.jpg">
+        <div class="food-info">
+          <h5>Pani Puri</h5>
+          <p>Crispy puris with spicy tangy water</p>
+              <span class="cart-icon" onclick="addToCart()">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+
+    <!-- 9 -->
+    <div class="col-md-4">
+      <a href="/Categories/snacks/samosachaat.html">
+      <div class="food-card">
+        <img src="/images/Snacks/SAMOSAA.jpg">
+        <div class="food-info">
+          <h5>Samosa Chaat</h5>
+          <p>Crushed samosa with chutneys</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 DesiSwad | Street Snacks</p>
+</div>
+<script src="./javascript/js/script.js"></script>
+
+</body>
+</html>

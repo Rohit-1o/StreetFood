@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #71b7e6, #FA922F);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #FA922F;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #8e44ad;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function validateLogin() {
+            var email = document.getElementById("email").value;
+            var pass = document.getElementById("pass").value;
+
+            if (email == "" || pass == "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+
+            // Simple display of credentials for demonstration
+            document.write("<h2>Login Attempt Successful</h2>");
+            document.write("<p>Username/Email: " + email + "</p>");
+            document.write("<p>Status: Authenticated</p>");
+        }
+    </script>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Welcome To Desi Swaad</h2>
+        <form method="POST" action="auth.php">
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="email@example.com">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="pass" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        </script>
+
+        <p>Don't have an account? <a href="#">Register</a></p>
+    </div>
+
+</body>
+</html>

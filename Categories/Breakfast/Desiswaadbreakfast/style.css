@@ -1,0 +1,55 @@
+/* Remove default spacing */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Full screen background */
+.background {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/036/725/045/large_2x/ai-generated-street-food-stalls-featuring-a-variety-of-spicy-and-flavorful-international-culinary-offerings-free-photo.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card design */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Dish image */
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Dish name */
+.card h2 {
+    margin-top: 15px;
+    color: #100f10;
+}
+
+/* Text details */
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* slightly bigger */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5); /* stronger shadow */
+}

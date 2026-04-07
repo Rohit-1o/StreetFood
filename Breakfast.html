@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakfast | DesiSwad</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+a {
+    text-decoration: none;  /* removes underline */
+    color: white;           /* or any color you want */
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar p-3">
+  <div class="container d-flex justify-content-between">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="./images/logo-removebg-preview (1).png" alt="Logo" width="40" height="40" class="me-2">
+        DESI SWAAD
+    </a>
+
+    <a href="home.html">
+      <button class="btn btn-outline-dark">Home</button>
+    </a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1 style="color: #0f0f0f;">🍳 Mumbai Breakfast Specials</h1>
+  <p>Street flavors from Nariman Point & nearby</p>
+</div>
+
+<!-- FOOD LIST -->
+<div class="container pb-5">
+  <div class="row g-4">
+
+    <!-- 1 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/vadapav.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Vada pav.jpeg">
+        <div class="food-info">
+          <h5>Vada Pav</h5>
+          <p>Classic Mumbai street burger</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 2 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/poha.html">
+      <div class="food-card">
+        <img src="./images/breakfast/poha.jpeg">
+        <div class="food-info">
+          <h5>Poha</h5>
+          <p>Light & healthy morning snack</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 3 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/idlisambhar.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Idli sambar.jpeg">
+        <div class="food-info">
+          <h5>Idli Sambar</h5>
+          <p>Soft idlis with hot sambar</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 4 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/masaladosa.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Masala Dosa.jpeg">
+        <div class="food-info">
+          <h5>Masala Dosa</h5>
+          <p>Crispy dosa with potato filling</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 5 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/upma.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Upma.jpeg">
+        <div class="food-info">
+          <h5>Upma</h5>
+          <p>South Indian savory breakfast</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 6 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/bunmaskachai.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Bun maska and chai.jpeg">
+        <div class="food-info">
+          <h5>Chai & Bun Maska</h5>
+          <p>Irani café style breakfast</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+
+    <!-- 7 -->
+    <div class="col-md-4">
+        <a href="/Categories/Breakfast/Desiswaadbreakfast/sabudana.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Shabudana Khichdi.jpeg">
+        <div class="food-info">
+          <h5>Sabudana Khichdi</h5>
+          <p>Popular fasting breakfast dish</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 8 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/misalpav.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Missal Pav.jpeg">
+        <div class="food-info">
+          <h5>Misal Pav</h5>
+          <p>Spicy Maharashtrian delight</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- 9 -->
+    <div class="col-md-4">
+        <a href="/Categories/Breakfast/Desiswaadbreakfast/eggpav.html">
+      <div class="food-card">
+        <img src="./images/breakfast/egg pav.jpeg">
+        <div class="food-info">
+          <h5>Omelette Pav</h5>
+          <p>Street-style egg sandwich</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+  
+
+    <!-- 10 -->
+    <div class="col-md-4">
+      <a href="/Categories/Breakfast/Desiswaadbreakfast/parathacurd.html">
+      <div class="food-card">
+        <img src="./images/breakfast/Paratha & Curd.jpeg">
+        <div class="food-info">
+          <h5>Paratha & Curd</h5>
+          <p>North Indian touch in Mumbai</p>
+              <span class="cart-icon" onclick="addToCart('Butter Chicken', 250)">
+                🛒
+              </span>
+        </div>
+      </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 DesiSwad | Breakfast Specials</p>
+</div>
+<script src="./javascript/js/script.js"></script>
+</body>
+</html>
