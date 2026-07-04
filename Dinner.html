@@ -30,7 +30,7 @@ a {
     </a>
     <div>
       <button class="btn btn-outline-dark me-2" onclick="history.back()">Back</button>
-      <button class="btn btn-outline-dark me-2" id="cartToggle">Cart <span class="badge bg-dark" id="cartCount">0</span></button>
+      <a class="btn btn-outline-dark me-2" href="cart.html" id="cartToggle">Cart <span class="badge bg-dark" id="cartCount">0</span></a>
       <a href="home.html">
         <button class="btn btn-outline-dark">Home</button>
       </a>
@@ -51,32 +51,28 @@ a {
     <!-- 1 -->
     <div class="col-md-4">
       <a href="product-details.html?name=Butter%20Chicken&price=220&desc=Creamy%20and%20rich%20North%20Indian%20curry&image=./images/dinner/Butter%20chicken.jpeg&category=Dinner">
-      <div class="food-card">
-        <img src="./images/dinner/Butter chicken.jpeg">
-        <div class="food-info">
-          <h5>Butter Chicken</h5>
-          <p>Creamy and rich North Indian curry</p>
-              <span class="cart-icon" data-price="220" onclick="addToCart('Butter Chicken',220)">
-                🛒
-              </span>
+        <div class="food-card">
+          <img src="./images/dinner/Butter chicken.jpeg" alt="Butter Chicken">
+          <div class="food-info">
+            <h5>Butter Chicken</h5>
+            <p>Creamy and rich North Indian curry</p>
+            <span class="cart-icon" data-price="220" onclick="addToCart('Butter Chicken',220)">🛒</span>
+          </div>
         </div>
-      </div>
       </a>
     </div>
 
     <!-- 2 -->
     <div class="col-md-4">
       <a href="/Categories/dinner/chickenbiriyani.html">
-      <div class="food-card">
-        <img src="./images/dinner/chicken Biryani.jpeg">
-        <div class="food-info">
-          <h5>Chicken Biryani</h5>
-          <p>Flavorful rice with spices & chicken</p>
-              <span class="cart-icon" data-price="220" onclick="addToCart('Chicken Biryani',220)">
-                🛒
-              </span>
+        <div class="food-card">
+          <img src="./images/dinner/chicken Biryani.jpeg" alt="Chicken Biryani">
+          <div class="food-info">
+            <h5>Chicken Biryani</h5>
+            <p>Flavorful rice with spices & chicken</p>
+            <span class="cart-icon" data-price="220" onclick="addToCart('Chicken Biryani',220)">🛒</span>
+          </div>
         </div>
-      </div>
       </a>
     </div>
 

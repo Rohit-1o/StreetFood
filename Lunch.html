@@ -36,7 +36,7 @@
 
     <div>
       <button class="btn btn-outline-dark me-2" onclick="history.back()">Back</button>
-      <button class="btn btn-outline-dark me-2" id="cartToggle">Cart <span class="badge bg-dark" id="cartCount">0</span></button>
+      <a class="btn btn-outline-dark me-2" href="cart.html" id="cartToggle">Cart <span class="badge bg-dark" id="cartCount">0</span></a>
       <a href="home.html">
         <button class="btn btn-outline-dark">Home</button>
       </a>
@@ -57,43 +57,39 @@
     <!-- 1 -->
     <div class="col-md-4">
       <a href="product-details.html?name=Veg%20Thali&price=180&desc=Complete%20Indian%20meal%20with%20roti,%20sabzi%20%26%20dal&image=./images/lunch/veg%20thali.png&category=Lunch">
-      <div class="food-card">
-        <img src="./images/lunch/veg thali.png">
-        <div class="food-info">
-          <h5>Veg Thali</h5>
-          <p>Complete Indian meal with roti, sabzi & dal</p>
-              <span class="cart-icon" data-price="180" onclick="addToCart('Veg Thali',180)">
-                🛒
-              </span>
+        <div class="food-card">
+          <img src="./images/lunch/veg thali.png" alt="Veg Thali">
+          <div class="food-info">
+            <h5>Veg Thali</h5>
+            <p>Complete Indian meal with roti, sabzi & dal</p>
+            <span class="cart-icon" data-price="180" onclick="addToCart('Veg Thali',180)">🛒</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <!-- 2 -->
     <div class="col-md-4">
       <a href="product-details.html?name=Pav%20Bhaji&price=140&desc=Butter-loaded%20bhaji%20with%20soft%20pav&image=./images/lunch/pav-bhaji.png&category=Lunch">
-      <div class="food-card">
-        <img src="./images/lunch/pav-bhaji.png">
-        <div class="food-info">
-          <h5>Pav Bhaji</h5>
-          <p>Butter-loaded bhaji with soft pav</p>
-              <span class="cart-icon" data-price="140" onclick="addToCart('Pav Bhaji',140)">
-                🛒
-              </span>
+        <div class="food-card">
+          <img src="./images/lunch/pav-bhaji.png" alt="Pav Bhaji">
+          <div class="food-info">
+            <h5>Pav Bhaji</h5>
+            <p>Butter-loaded bhaji with soft pav</p>
+            <span class="cart-icon" data-price="140" onclick="addToCart('Pav Bhaji',140)">🛒</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <!-- 3 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/rajma chawal.jpg">
+        <img src="./images/lunch/rajma chawal.jpg" alt="Rajma Chawal">
         <div class="food-info">
           <h5>Rajma Chawal</h5>
           <p>Comfort North Indian rice combo</p>
-              <span class="cart-icon" data-price="150" onclick="addToCart('Rajma Chawal',150)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="150" onclick="addToCart('Rajma Chawal',150)">🛒</span>
         </div>
       </div>
     </div>
@@ -101,13 +97,11 @@
     <!-- 4 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/briyani.webp">
+        <img src="./images/lunch/briyani.webp" alt="Biryani">
         <div class="food-info">
           <h5>Biryani</h5>
           <p>Fragrant rice with spices & flavor</p>
-              <span class="cart-icon" data-price="200" onclick="addToCart('Biryani',200)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="200" onclick="addToCart('Biryani',200)">🛒</span>
         </div>
       </div>
     </div>
@@ -115,13 +109,11 @@
     <!-- 5 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/daltadka.jpg">
+        <img src="./images/lunch/daltadka.jpg" alt="Dal Tadka & Roti">
         <div class="food-info">
           <h5>Dal Tadka & Roti</h5>
           <p>Simple yet satisfying lunch</p>
-              <span class="cart-icon" data-price="120" onclick="addToCart('Dal Tadka & Roti',120)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="120" onclick="addToCart('Dal Tadka & Roti',120)">🛒</span>
         </div>
       </div>
     </div>
@@ -129,13 +121,11 @@
     <!-- 6 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/paneerbutter masala.jpg">
+        <img src="./images/lunch/paneerbutter masala.jpg" alt="Paneer Butter Masala">
         <div class="food-info">
           <h5>Paneer Butter Masala</h5>
           <p>Creamy paneer curry with naan</p>
-              <span class="cart-icon" data-price="180" onclick="addToCart('Paneer Butter Masala',180)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="180" onclick="addToCart('Paneer Butter Masala',180)">🛒</span>
         </div>
       </div>
     </div>
@@ -143,13 +133,11 @@
     <!-- 7 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/chole bhature.jpg">
+        <img src="./images/lunch/chole bhature.jpg" alt="Chole Bhature">
         <div class="food-info">
           <h5>Chole Bhature</h5>
           <p>Spicy chickpeas with fluffy bhature</p>
-              <span class="cart-icon" data-price="160" onclick="addToCart('Chole Bhature',160)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="160" onclick="addToCart('Chole Bhature',160)">🛒</span>
         </div>
       </div>
     </div>
@@ -157,13 +145,11 @@
     <!-- 8 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/fish curry  rice.jpg">
+        <img src="./images/lunch/fish curry  rice.jpg" alt="Fish Curry Rice">
         <div class="food-info">
           <h5>Fish Curry Rice</h5>
           <p>Coastal Mumbai seafood favorite</p>
-              <span class="cart-icon" data-price="210" onclick="addToCart('Fish Curry Rice',210)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="210" onclick="addToCart('Fish Curry Rice',210)">🛒</span>
         </div>
       </div>
     </div>
@@ -171,13 +157,11 @@
     <!-- 9 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/chiken curry.jpg">
+        <img src="./images/lunch/chiken curry.jpg" alt="Chicken Curry & Rice">
         <div class="food-info">
           <h5>Chicken Curry & Rice</h5>
           <p>Spicy and rich local style curry</p>
-              <span class="cart-icon" data-price="190" onclick="addToCart('Chicken Curry & Rice',190)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="190" onclick="addToCart('Chicken Curry & Rice',190)">🛒</span>
         </div>
       </div>
     </div>
@@ -185,13 +169,11 @@
     <!-- 10 -->
     <div class="col-md-4">
       <div class="food-card">
-        <img src="./images/lunch/veg pulao.jpg">
+        <img src="./images/lunch/veg pulao.jpg" alt="Veg Pulao">
         <div class="food-info">
           <h5>Veg Pulao</h5>
           <p>Light rice dish with vegetables</p>
-              <span class="cart-icon" data-price="130" onclick="addToCart('Veg Pulao',130)">
-                🛒
-              </span>
+          <span class="cart-icon" data-price="130" onclick="addToCart('Veg Pulao',130)">🛒</span>
         </div>
       </div>
     </div>

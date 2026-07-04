@@ -30,7 +30,7 @@ a {
     </a>
     <div>
       <button class="btn btn-outline-dark me-2" onclick="history.back()">Back</button>
-      <button class="btn btn-outline-dark me-2" id="cartToggle">Cart <span class="badge bg-dark" id="cartCount">0</span></button>
+      <a class="btn btn-outline-dark me-2" href="cart.html" id="cartToggle">Cart <span class="badge bg-dark" id="cartCount">0</span></a>
       <a href="home.html">
         <button class="btn btn-outline-dark">Home</button>
       </a>
@@ -51,32 +51,28 @@ a {
     <!-- 1 -->
     <div class="col-md-4">
       <a href="product-details.html?name=Bombay%20Sandwich&price=70&desc=Layered%20chutney%20sandwich&image=./images/Snacks/sandwich.jpg&category=Snacks">
-      <div class="food-card">
-        <img src="./images/Snacks/sandwich.jpg">
-        <div class="food-info">
-          <h5>Bombay Sandwich</h5>
-          <p>Layered chutney sandwich</p>
-              <span class="cart-icon" data-price="70" onclick="addToCart('Bombay Sandwich',70)">
-                🛒
-              </span>
+        <div class="food-card">
+          <img src="./images/Snacks/sandwich.jpg" alt="Bombay Sandwich">
+          <div class="food-info">
+            <h5>Bombay Sandwich</h5>
+            <p>Layered chutney sandwich</p>
+            <span class="cart-icon" data-price="70" onclick="addToCart('Bombay Sandwich',70)">🛒</span>
+          </div>
         </div>
-      </div>
       </a>
     </div>
 
     <!-- 2 -->
     <div class="col-md-4">
       <a href="product-details.html?name=Burger&price=120&desc=The%20king%20of%20Mumbai%20street%20food&image=./images/Snacks/burger.jpg&category=Snacks">
-      <div class="food-card">
-        <img src="./images/Snacks/burger.jpg">
-        <div class="food-info">
-          <h5>Burger</h5>
-          <p>The king of Mumbai street food</p>
-              <span class="cart-icon" data-price="120" onclick="addToCart('Burger',120)">
-                🛒
-              </span>
+        <div class="food-card">
+          <img src="./images/Snacks/burger.jpg" alt="Burger">
+          <div class="food-info">
+            <h5>Burger</h5>
+            <p>The king of Mumbai street food</p>
+            <span class="cart-icon" data-price="120" onclick="addToCart('Burger',120)">🛒</span>
+          </div>
         </div>
-      </div>
       </a>
     </div>
 

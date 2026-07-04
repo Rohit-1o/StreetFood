@@ -69,7 +69,7 @@ function renderCart() {
   }
 }
 
-function addToCart(name, price) {
+function addToCart(name, price, redirectToCart = false) {
   const cart = getCart();
   const itemName = name || 'Food Item';
   const itemPrice = Number(price) || getDefaultPrice(itemName);
@@ -84,6 +84,10 @@ function addToCart(name, price) {
   saveCart(cart);
   renderCart();
   showToast(`Thank you! ${itemName} has been added to your order.`);
+
+  if (redirectToCart && !window.location.pathname.includes('cart.html')) {
+    window.location.href = 'cart.html';
+  }
 }
 
 function openCart() {
@@ -93,6 +97,24 @@ function openCart() {
 
 function closeCart() {
   document.body.classList.remove('cart-open');
+}
+
+function placeOrderAndRedirect() {
+  const cart = getCart();
+  if (!cart.length) {
+    showToast('Your cart is empty.');
+    return;
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+  const orders = JSON.parse(localStorage.getItem('desiswaad-orders') || '[]');
+  const id = orders.length ? (orders[orders.length - 1].id + 1) : 1;
+  const order = { id, items: cart, total, date: new Date().toLocaleString() };
+  orders.push(order);
+  localStorage.setItem('desiswaad-orders', JSON.stringify(orders));
+  saveCart([]);
+  renderCart();
+  window.location.href = 'order-success.html';
 }
 
 function openPayment() {
@@ -162,20 +184,7 @@ function openPayment() {
   });
 
   // Order Now button: place order and redirect to success page
-  document.getElementById('orderNowBtn')?.addEventListener('click', () => {
-    const cart = getCart();
-    if (!cart.length) { showToast('Your cart is empty.'); return; }
-    const total = cart.reduce((s,i)=>s+i.price*i.quantity,0);
-    const orders = JSON.parse(localStorage.getItem('desiswaad-orders') || '[]');
-    const id = orders.length ? (orders[orders.length-1].id + 1) : 1;
-    const order = { id, items: cart, total, date: new Date().toLocaleString() };
-    orders.push(order);
-    localStorage.setItem('desiswaad-orders', JSON.stringify(orders));
-    saveCart([]);
-    renderCart();
-    // go to full page thank-you
-    window.location.href = 'order-success.html';
-  });
+  document.getElementById('orderNowBtn')?.addEventListener('click', placeOrderAndRedirect);
 
   // Back button from payment returns to cart (keeps cart open)
   document.getElementById('paymentBackBtn')?.addEventListener('click', () => {
@@ -218,46 +227,19 @@ function updateAuthUI() {
 }
 
 function initCartUI() {
-  if (document.getElementById('cartDrawer')) return;
+  if (!document.getElementById('modalOverlay')) {
+    const overlay = document.createElement('div');
+    overlay.id = 'modalOverlay';
+    overlay.className = 'modal-overlay';
 
-  const cartDrawer = document.createElement('div');
-  cartDrawer.id = 'cartDrawer';
-  cartDrawer.className = 'cart-drawer';
-  cartDrawer.innerHTML = `
-    <div class="cart-drawer-header">
-      <h4>Your Cart</h4>
-      <button class="cart-close" id="closeCartBtn" type="button">×</button>
-    </div>
-    <div class="cart-body">
-      <p id="cartMessage">Your cart is empty.</p>
-      <ul id="cartItems"></ul>
-      <div class="cart-total-row">
-        <span>Total</span>
-        <strong id="cartTotal">₹0</strong>
-      </div>
-      <button class="btn btn-main w-100 mt-3" id="checkoutBtn" type="button">Proceed to Pay</button>
-    </div>
-  `;
+    const paymentModal = document.createElement('div');
+    paymentModal.id = 'paymentModal';
+    paymentModal.className = 'payment-modal';
+    paymentModal.innerHTML = '<div id="paymentContent"></div>';
 
-  const overlay = document.createElement('div');
-  overlay.id = 'modalOverlay';
-  overlay.className = 'modal-overlay';
-
-  const paymentModal = document.createElement('div');
-  paymentModal.id = 'paymentModal';
-  paymentModal.className = 'payment-modal';
-  paymentModal.innerHTML = '<div id="paymentContent"></div>';
-
-  const cartFab = document.createElement('button');
-  cartFab.id = 'cartFab';
-  cartFab.className = 'cart-fab';
-  cartFab.type = 'button';
-  cartFab.innerHTML = '🛒 <span id="cartCount">0</span>';
-
-  document.body.appendChild(cartDrawer);
-  document.body.appendChild(overlay);
-  document.body.appendChild(paymentModal);
-  // removed bottom FAB for a cleaner, professional header experience
+    document.body.appendChild(overlay);
+    document.body.appendChild(paymentModal);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -311,12 +293,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartToggle = document.getElementById('cartToggle');
   const closeCartBtn = document.getElementById('closeCartBtn');
   const checkoutBtn = document.getElementById('checkoutBtn');
+  const orderBtn = document.getElementById('orderBtn');
   const modalOverlay = document.getElementById('modalOverlay');
 
-  cartToggle?.addEventListener('click', (e) => { e.preventDefault(); openCart(); });
+  cartToggle?.addEventListener('click', (e) => {
+    if (window.location.pathname.includes('cart.html')) {
+      e.preventDefault();
+      renderCart();
+      return;
+    }
+
+    e.preventDefault();
+    window.location.href = 'cart.html';
+  });
   closeCartBtn?.addEventListener('click', closeCart);
   modalOverlay?.addEventListener('click', closePayment);
   checkoutBtn?.addEventListener('click', openPayment);
+  orderBtn?.addEventListener('click', placeOrderAndRedirect);
 
   // quantity controls delegation
   document.body.addEventListener('click', (e) => {
