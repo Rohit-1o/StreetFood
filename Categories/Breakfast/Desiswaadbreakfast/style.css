@@ -53,3 +53,27 @@ body, html {
     transform: scale(1.05); /* slightly bigger */
     box-shadow: 0 12px 30px rgba(0,0,0,0.5); /* stronger shadow */
 }
+
+/* Back Button */
+.btn {
+    margin-top: 20px;
+    background: #ff6b35;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #e65a2c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
