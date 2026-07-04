@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Desi Swaad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <h2>Create an account</h2>
+    <p class="auth-subtitle">Join Desi Swaad and start ordering</p>
+    <form id="signupForm" novalidate>
+      <div class="field-box">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="John Wick" required>
+      </div>
+      <div class="field-box">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="john@example.com" required>
+      </div>
+      <div class="field-box">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create password" required>
+      </div>
+      <div class="field-box">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Repeat password" required>
+      </div>
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+    <p class="auth-link">Already have an account? <a href="login.html">Login</a></p>
+    <p id="authMessage" class="auth-message" role="status"></p>
+  </div>
+
+  <script>
+    const signupForm = document.getElementById('signupForm');
+    const authMessage = document.getElementById('authMessage');
+
+    signupForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const users = JSON.parse(localStorage.getItem('desiswaad-users') || '[]');
+
+      if (!name || !email || !password || !confirmPassword) {
+        authMessage.textContent = 'Please fill in all fields.';
+        authMessage.style.color = '#b91c1c';
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        authMessage.textContent = 'Passwords do not match.';
+        authMessage.style.color = '#b91c1c';
+        return;
+      }
+
+      const existingUser = users.find((user) => user.email === email);
+      if (existingUser) {
+        authMessage.textContent = 'An account with this email already exists.';
+        authMessage.style.color = '#b91c1c';
+        return;
+      }
+
+      users.push({ name, email, password });
+      localStorage.setItem('desiswaad-users', JSON.stringify(users));
+      localStorage.setItem('desiswaad-current-user', name);
+      authMessage.textContent = 'Registration successful! Redirecting to home...';
+      authMessage.style.color = '#166534';
+      setTimeout(() => window.location.href = 'home.html', 1000);
+    });
+  </script>
+</body>
+</html>

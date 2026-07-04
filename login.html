@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Desi Swaad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <h2>Welcome back</h2>
+    <p class="auth-subtitle">Login to your Desi Swaad account</p>
+    <form id="loginForm" novalidate>
+      <div class="field-box">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="email@example.com" required>
+      </div>
+      <div class="field-box">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+    <p class="auth-link">New here? <a href="register.html">Create an account</a></p>
+    <p id="authMessage" class="auth-message" role="status"></p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const authMessage = document.getElementById('authMessage');
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const users = JSON.parse(localStorage.getItem('desiswaad-users') || '[]');
+      const savedUser = users.find((user) => user.email === email && user.password === password);
+
+      if (!email || !password) {
+        authMessage.textContent = 'Please fill in both fields.';
+        authMessage.style.color = '#b91c1c';
+        return;
+      }
+
+      if (!savedUser) {
+        authMessage.textContent = 'No account found for that email and password.';
+        authMessage.style.color = '#b91c1c';
+        return;
+      }
+
+      localStorage.setItem('desiswaad-current-user', savedUser.name);
+      authMessage.textContent = 'Login successful! Redirecting to home...';
+      authMessage.style.color = '#166534';
+      setTimeout(() => window.location.href = 'home.html', 1000);
+    });
+  </script>
+</body>
+</html>

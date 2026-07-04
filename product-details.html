@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="product-details">
+  <nav class="navbar p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <img src="./images/logo-removebg-preview (1).png" alt="Logo" width="40" height="40" class="me-2">
+        DESI SWAAD
+      </a>
+      <div>
+        <button class="btn btn-outline-dark me-2" onclick="history.back()" type="button">Back</button>
+        <a href="home.html"><button class="btn btn-outline-dark" type="button">Home</button></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <img id="productImage" src="./images/breakfast2.jpeg" alt="Product" class="img-fluid rounded shadow" style="max-height: 420px; object-fit: cover; width: 100%;">
+      </div>
+      <div class="col-lg-6">
+        <span id="productCategory" class="badge bg-warning text-dark mb-3">Dish</span>
+        <h1 id="productName" class="mb-3">Product Name</h1>
+        <p id="productDescription" class="lead">Freshly prepared food with authentic flavors.</p>
+        <div class="mb-3">
+          <h3 id="productPrice" class="text-dark">₹0</h3>
+        </div>
+        <div class="d-flex gap-2">
+          <button id="detailAddCartBtn" class="btn btn-main" type="button">Add to Cart</button>
+          <a href="home.html"><button class="btn btn-outline-dark" type="button">Explore More</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./javascript/js/script.js"></script>
+</body>
+</html>
